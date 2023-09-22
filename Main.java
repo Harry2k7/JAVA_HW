@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        var notebooks = GenerateSetNotebooks();
-        Menu(notebooks);
+        var laptops = GenerateSetLaptops();
+        Menu(laptops);
     }
 
-    public static void Menu(HashSet<Laptop> notebooks) {
+    public static void Menu(HashSet<Laptop> laptops) {
         try (Scanner scan = new Scanner(System.in, "cp866")) {
             int input = 0;
             while (input != 7) {
@@ -17,22 +17,22 @@ public class Main {
                 input = Integer.valueOf(scan.nextLine());
                 switch (input) {
                     case 1:
-                        SearchRAM(notebooks);
+                        SearchRAM(laptops);
                         break;
                     case 2:
-                        SearchSSD(notebooks);
+                        SearchSSD(laptops);
                         break;
                     case 3:
-                        SearchOS(notebooks);
+                        SearchOS(laptops);
                         break;
                     case 4:
-                        SearchColor(notebooks);
+                        SearchColor(laptops);
                         break;
                     case 5:
-                        SearchDiagonal(notebooks);
+                        SearchDiagonal(laptops);
                         break;
                     case 6:
-                        SearchPrice(notebooks);
+                        SearchPrice(laptops);
                         break;
                     case 7:
                         break;
@@ -46,13 +46,14 @@ public class Main {
         }
     }
 
-    public static HashSet<Laptop> GenerateSetNotebooks() {
+    public static HashSet<Laptop> GenerateSetLaptops() {
         Laptop laptop1 = new Laptop("ASUS", "Vivobook Pro", "Windows 11");
         laptop1.setColor("серый");
         laptop1.setRAM(16);
         laptop1.setSSD(512);
         laptop1.setDiagonal(16);
         laptop1.setPrice(99900.99);
+        
         Laptop laptop2 = new Laptop("Lenovo", "IdealPad", "Linux", "серый", 16, 512, 16, 99900.5);
         Laptop laptop3 = new Laptop("HONOR", "MagicBook", "Windows 11","черный", 8, 512, 14, 59999.99);
         Laptop laptop4 = new Laptop("IRBIS", "NB121", "Windows 11","белый", 4, 640,  11, 16999.99);
